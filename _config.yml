@@ -3,7 +3,7 @@ description: Digital Art Portfolio
 baseurl: ""
 url: "https://arcanumart.pics"
 
-# Add these lines
+# Repository settings
 repository: arcanum-art/arcanum-art-blog
 github: [metadata]
 
@@ -12,6 +12,25 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Collections settings
+collections_dir: collections
+collections:
+  gallery:
+    output: true
+    permalink: /:collection/:name
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "gallery"
+    values:
+      layout: collection
 
 # Exclude files from processing
 exclude:
